@@ -34,11 +34,11 @@
 #define Y_WIDTH 	64	    						  
 //-----------------OLED IIC¶Ë¿Ú¶¨Òå----------------  					   
 
-#define OLED_SCLK_Clr() GPIO_ResetBits(GPIOB,GPIO_Pin_8)//SCL
-#define OLED_SCLK_Set() GPIO_SetBits(GPIOB,GPIO_Pin_8)
+#define OLED_SCLK_Clr() GPIO_ResetBits(GPIOA,GPIO_Pin_4)//SCL
+#define OLED_SCLK_Set() GPIO_SetBits(GPIOA,GPIO_Pin_4)
 
-#define OLED_SDIN_Clr() GPIO_ResetBits(GPIOB,GPIO_Pin_9)//SDA
-#define OLED_SDIN_Set() GPIO_SetBits(GPIOB,GPIO_Pin_9)
+#define OLED_SDIN_Clr() GPIO_ResetBits(GPIOA,GPIO_Pin_5)//SDA
+#define OLED_SDIN_Set() GPIO_SetBits(GPIOA,GPIO_Pin_5)
 
  		     
 #define OLED_CMD  0	//Ð´ÃüÁî
