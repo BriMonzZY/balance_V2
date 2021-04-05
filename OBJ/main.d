@@ -42,3 +42,4 @@
 ..\obj\main.o: ..\HARDWARE\KEY\key.h
 ..\obj\main.o: D:\app\keilARM\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\main.o: D:\app\keilARM\ARM\ARMCC\Bin\..\include\math.h
+..\obj\main.o: ..\HARDWARE\ENCODER\encoder.h
