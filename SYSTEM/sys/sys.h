@@ -1,24 +1,15 @@
 #ifndef __SYS_H
 #define __SYS_H	 
 
- /**************************************************************************
- 作  者 ：大鱼电子
- 淘宝地址：https://shop119207236.taobao.com
- 
- 微信公众号【大鱼机器人】
- 后台回复【平衡小车】：获取平衡小车全套DIY资料
- 后台回复【电子开发工具】：获取电子工程师必备开发工具
- 后台回复【电子设计资料】：获取电子设计资料包
- 
- 知乎：张巧龙 
-**************************************************************************/
+/* 用户头文件 */
 #include "stm32f10x.h"
 #include "delay.h"
 #include "usart.h"
-#include "led.h"
 #include "oled.h"
-#include "key.h"
-////////////////////////////////////////////////////////////////////////////
+#include "encoder.h"
+#include "timer.h"
+
+/* 标准头文件 */
 #include <string.h> 
 #include <stdio.h>
 #include <stdint.h>
@@ -26,9 +17,7 @@
 #include <string.h>
 #include <math.h>
  
-//位带操作,实现51类似的GPIO控制功能
-//具体实现思想,参考<<CM3权威指南>>第五章(87页~92页).
-//IO口操作宏定义
+/* 位带操作 */
 #define BITBAND(addr, bitnum) ((addr & 0xF0000000)+0x2000000+((addr &0xFFFFF)<<5)+(bitnum<<2)) 
 #define MEM_ADDR(addr)  *((volatile unsigned long  *)(addr)) 
 #define BIT_ADDR(addr, bitnum)   MEM_ADDR(BITBAND(addr, bitnum)) 
@@ -92,7 +81,7 @@
 
 void NVIC_Configuration(void);//中断优先级设置	 
 
-#endif
+#endif /* __SYS_H */
 
 
 

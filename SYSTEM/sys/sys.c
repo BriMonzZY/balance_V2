@@ -1,8 +1,6 @@
 #include "sys.h" 
- /**************************************************************************
- 作  者 ：大鱼电子
-淘宝地址：https://shop119207236.taobao.com
-**************************************************************************/
+
+
 //设置NVIC 
 //NVIC_PreemptionPriority:抢占优先级
 //NVIC_SubPriority       :响应优先级
@@ -18,8 +16,8 @@
 //NVIC_SubPriority和NVIC_PreemptionPriority的原则是,数值越小,越优先	   
 void NVIC_Configuration(void)
 {
-		NVIC_InitTypeDef  NVIC_InitStructure;	
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);	//设置NVIC中断分组2:2位抢占优先级，2位响应优先级
+		//NVIC_InitTypeDef  NVIC_InitStructure;	
+    //NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);	//设置NVIC中断分组2:2位抢占优先级，2位响应优先级
 
 //		//////////////////外部中断5优先级配置也就是MPU6050 INT引脚的配置///////////因为是控制中断，故此优先级应是最高。
 //		NVIC_InitStructure.NVIC_IRQChannel = EXTI9_5_IRQn;				//使能外部中断通道

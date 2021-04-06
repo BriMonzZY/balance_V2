@@ -37,9 +37,9 @@
 ..\obj\led.o: ..\SYSTEM\sys\sys.h
 ..\obj\led.o: ..\SYSTEM\usart\usart.h
 ..\obj\led.o: D:\app\keilARM\ARM\ARMCC\Bin\..\include\stdio.h
-..\obj\led.o: ..\HARDWARE\LED\led.h
 ..\obj\led.o: ..\HARDWARE\OLED\oled.h
 ..\obj\led.o: D:\app\keilARM\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\led.o: ..\HARDWARE\KEY\key.h
+..\obj\led.o: ..\HARDWARE\ENCODER\encoder.h
+..\obj\led.o: ..\HARDWARE\timer\timer.h
 ..\obj\led.o: D:\app\keilARM\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\led.o: D:\app\keilARM\ARM\ARMCC\Bin\..\include\math.h

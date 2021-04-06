@@ -2,6 +2,12 @@
 #include "encoder.h"
 
 
+/**
+ * @brief		TIM2初始化函数
+ * 
+ * @param		无
+ * @return	无
+ */
 void Encoder_Init_TIM2(void)
 {
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;  
@@ -36,7 +42,12 @@ void Encoder_Init_TIM2(void)
 }
 
 
-
+/**
+ * @brief		TIM4初始化函数
+ * 
+ * @param		无
+ * @return	无
+ */
 void Encoder_Init_TIM4(void)
 {
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;  
@@ -70,40 +81,78 @@ void Encoder_Init_TIM4(void)
   TIM_Cmd(TIM4, ENABLE); 
 }
 
-
+/**
+ * @brief		读取TIM获取的编码器的值
+ * 
+ * @param		TIMx：要读取的TIM的值
+ * @return	编码器的值
+ */
 int Read_Encoder(u8 TIMX)
 {
-    int Encoder_TIM;    
-    switch(TIMX)
-    {
-			case 2:  Encoder_TIM = (short)TIM2 -> CNT;  TIM2 -> CNT=0; break;
-			case 3:  Encoder_TIM = (short)TIM3 -> CNT;  TIM3 -> CNT=0; break;
-			case 4:  Encoder_TIM = (short)TIM4 -> CNT;  TIM4 -> CNT=0; break;
-			default: Encoder_TIM = 0;
-    }
-    return Encoder_TIM;
+	int Encoder_TIM;    
+	switch(TIMX) {
+		case 2:  Encoder_TIM = (short)TIM2 -> CNT;  TIM2 -> CNT=0; break;
+		case 3:  Encoder_TIM = (short)TIM3 -> CNT;  TIM3 -> CNT=0; break;
+		case 4:  Encoder_TIM = (short)TIM4 -> CNT;  TIM4 -> CNT=0; break;
+		default: Encoder_TIM = 0;
+	}
+	return Encoder_TIM;
 }
 
+/*
+int Read_Encoder(u8 TIMX)
+{
+    int value_1;
+    switch(TIMX) {
+        case 2: value_1 = (short)TIM_GetCounter(TIM2); TIM_SetCounter(TIM2, 0); break;
+        case 4: value_1 = (short)TIM_GetCounter(TIM4); TIM_SetCounter(TIM4, 0); break;
+        default: value_1 = 0;
+    }
+    return value_1;
+}
+*/
 
 
-
+/**
+ * @brief		TIM4中断服务函数
+ * 
+ * @param		无
+ * @return	无
+ */
 void TIM4_IRQHandler(void)
 {
-    if(TIM4->SR&0X0001)//溢出中断
-    {                   
-    }    
-    TIM4->SR&=~(1<<0);//清除中断标志位      
+	if(TIM4->SR&0X0001){  // 溢出中断              
+	}    
+	TIM4->SR&=~(1<<0);  // 清除中断标志位      
 }
 
+/**
+ * @brief		TIM2中断服务函数
+ * 
+ * @param		无
+ * @return	无
+ */
 void TIM2_IRQHandler(void)
 {              
-    if(TIM2->SR&0X0001)//溢出中断
-		{                   
-		}    
-    TIM2->SR&=~(1<<0);//清除中断标志位      
+	if(TIM2->SR&0X0001){  // 溢出中断             
+	}    
+	TIM2->SR&=~(1<<0);  // 清除中断标志位      
 }
 
+/*
+void TIM2_IQRHandler(void)
+{
+    if(TIM_GetITStatus(TIM2, TIM_IT_Update) != 0) {
+        TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+    }
+}
 
-
+void TIM4_IQRHandler(void)
+{
+    if(TIM_GetITStatus(TIM4, TIM_IT_Update) != 0) {
+        TIM_ClearITPendingBit(TIM4, TIM_IT_Update);
+    }
+}
+*/
 
 

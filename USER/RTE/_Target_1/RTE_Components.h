@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'OLED_TEST' 
+ * Project: 'balance_evo' 
  * Target:  'Target 1' 
  */
 

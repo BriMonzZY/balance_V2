@@ -37,9 +37,9 @@
 ..\obj\usart.o: ..\SYSTEM\delay\delay.h
 ..\obj\usart.o: ..\SYSTEM\sys\sys.h
 ..\obj\usart.o: ..\SYSTEM\usart\usart.h
-..\obj\usart.o: ..\HARDWARE\LED\led.h
 ..\obj\usart.o: ..\HARDWARE\OLED\oled.h
 ..\obj\usart.o: D:\app\keilARM\ARM\ARMCC\Bin\..\include\stdlib.h
-..\obj\usart.o: ..\HARDWARE\KEY\key.h
+..\obj\usart.o: ..\HARDWARE\ENCODER\encoder.h
+..\obj\usart.o: ..\HARDWARE\timer\timer.h
 ..\obj\usart.o: D:\app\keilARM\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\usart.o: D:\app\keilARM\ARM\ARMCC\Bin\..\include\math.h

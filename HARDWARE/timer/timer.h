@@ -1,3 +1,5 @@
 #ifndef __TIMER_H
 #define __TIMER_H
-#endif
+
+
+#endif /* __TIMER_H */
